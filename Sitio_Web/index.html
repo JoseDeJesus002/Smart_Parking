@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
     <title>Led</title>
     <style>
       .indicador-led-off {
@@ -19,117 +20,116 @@
     </style>
   </head>
   <body>
-    <h1>Buttons</h1>
-    <h2>Botones</h2>
-    <input
-      type="button"
-      id="botonEncender"
-      onclick="botonEncender()"
-      value="Encender"
-    />
-    <input
-      type="button"
-      id="botonEncender"
-      onclick="botonEncender()"
-      value="Encender"
-    />
-    <input
-      type="button"
-      id="botonApagar"
-      onclick="botonApagar()"
-      value="Apagar"
-    />
-    <h2>Distancia</h2>
-    <meter value="2" min="0" max="100" id="distance_meter"> </meter>
-    <h3 id="distance">2</h3>
+    <div class="topnav">
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <a href=""><img src="images/len.png" id="len-search"></a>
+        </form>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a>
+      <a href="index.html">Inicio</a>
+    </div>
 
+    <div id="main">
+      <span style="cursor: pointer" class="menu_func" onclick="openNav()"
+        >&#9776;</span
+      >
+      <div class="container">
+    <!-- variables para el registro de los datos -->
+    <!-- <h2>Distancia</h2>
+    <meter value="2" min="0" max="100" id="distance_meter"></meter>
+    <h3 id="distance">2</h3> -->
+    <div class="indicadores">
     <h2>Indicador</h2>
     <div class="indicador-led-off" id="indicador"></div>
 
-    <h2>Distancia 2</h2>
-    <meter value="2" min="0" max="100" id="distance_meter2"> </meter>
-    <h3 id="distance2">2</h3>
+    <!-- <h2>Distancia 2</h2>
+    <meter value="2" min="0" max="100" id="distance_meter2"></meter>
+    <h3 id="distance2">2</h3> -->
 
     <h2>Indicador 2</h2>
     <div class="indicador-led-off" id="indicador2"></div>
+  </div>
+  </div>
     <script>
       //conexion con el servidor websockets
-      var connection = new WebSocket('ws://'+location.hostname+':81/');
+      var connection = new WebSocket("ws://" + location.hostname + ":81/");
       //variables para el registro de los datos
       var estado_boton = 0;
       estado_boton2 = 0;
       var distancias = 0;
       var distancias2 = 0;
 
-        connection.onmessage = function(event) {
-         //extraccion de datos desde arduino 
-         var datos_sensores = event.data;
-         var data = JSON.parse(datos_sensores);
-         //variables de extraccion de datos
-         distancias = data.distancia;
-         distancias2 = data.distancia2; 
-         estado_boton = data.indicador;
-         estado_boton2 = data.indicador2;
-         //actualizacion de datos
-         document.getElementById("distance_meter").value = distancias;
-         document.getElementById("distance").innerHTML = distancias;
-         //2 
-         document.getElementById("distance_meter2").value = distancias2;
-         document.getElementById("distance2").innerHTML = distancias2;
-         //actualizacion de indicador
-         if (estado_boton == 1) 
-         {
-            botonEncender();
-           console.log("Encender led");
-         }
-         else if (estado_boton == 0)
-         {
-            botonApagar();
-           console.log("Apagar led");
-         }
-          else
-          {
-            console.log("Error");
-          }
-        //Lugar 2
-        if (estado_boton2 == 1) 
-         {
-            botonEncender2();
-           console.log("Encender led2");
-         }
-         else if (estado_boton2 == 0)
-         {
-            botonApagar2();
-           console.log("Apagar led2");
-         }
-          else
-          {
-            console.log("Error");
-          }
+      connection.onmessage = function (event) {
+        //extraccion de datos desde arduino
+        var datos_sensores = event.data;
+        var data = JSON.parse(datos_sensores);
+        //variables de extraccion de datos
+        distancias = data.distancia;
+        distancias2 = data.distancia2;
+        estado_boton = data.indicador;
+        estado_boton2 = data.indicador2;
+        //actualizacion de datos
+        document.getElementById("distance_meter").value = distancias;
+        document.getElementById("distance").innerHTML = distancias;
+        //2
+        document.getElementById("distance_meter2").value = distancias2;
+        document.getElementById("distance2").innerHTML = distancias2;
+        //actualizacion de indicador
+        if (estado_boton == 1) {
+          botonEncender();
+          console.log("Encender led");
+        } else if (estado_boton == 0) {
+          botonApagar();
+          console.log("Apagar led");
+        } else {
+          console.log("Error");
         }
+        //Lugar 2
+        if (estado_boton2 == 1) {
+          botonEncender2();
+          console.log("Encender led2");
+        } else if (estado_boton2 == 0) {
+          botonApagar2();
+          console.log("Apagar led2");
+        } else {
+          console.log("Error");
+        }
+      };
 
-         function botonEncender() 
-         {
-           document.getElementById("indicador").classList.remove("indicador-led-off");
-           document.getElementById("indicador").classList.add("indicador-led-on");
-         }
+      function botonEncender() {
+        document
+          .getElementById("indicador")
+          .classList.remove("indicador-led-off");
+        document.getElementById("indicador").classList.add("indicador-led-on");
+      }
 
-         function botonEncender2() 
-         {
-           document.getElementById("indicador2").classList.remove("indicador-led-off");
-           document.getElementById("indicador2").classList.add("indicador-led-on");
-         }
-         function botonApagar() 
-         {
-           document.getElementById("indicador").classList.remove("indicador-led-on");
-           document.getElementById("indicador").classList.add("indicador-led-off");
-         }
-         function botonApagar2() 
-         {
-           document.getElementById("indicador2").classList.remove("indicador-led-on");
-           document.getElementById("indicador2").classList.add("indicador-led-off");
-         }
-         
+      function botonEncender2() {
+        document
+          .getElementById("indicador2")
+          .classList.remove("indicador-led-off");
+        document.getElementById("indicador2").classList.add("indicador-led-on");
+      }
+      function botonApagar() {
+        document
+          .getElementById("indicador")
+          .classList.remove("indicador-led-on");
+        document.getElementById("indicador").classList.add("indicador-led-off");
+      }
+      function botonApagar2() {
+        document
+          .getElementById("indicador2")
+          .classList.remove("indicador-led-on");
+        document
+          .getElementById("indicador2")
+          .classList.add("indicador-led-off");
+      }
     </script>
+    <script src="script/nav_bar.js"></script>
   </body>
 </html>
