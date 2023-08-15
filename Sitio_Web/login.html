@@ -10,13 +10,26 @@
     <div class="container">
         <img id="image-resource" src="images/resource-login.png" alt="">
         <p class="label-login">Usuario</p>
-        <input class="input-login" type="text">
+        <input class="input-login" id="email" type="text">
         <p class="label-login">Contraseña</p>
-        <input class="input-login" type="password">
+        <input class="input-login" id="password" type="password">
         <br>
-        <a href="index.html"><button class="join">Ingresar</button></a>
+        <button class="join" onclick="login()">Ingresar</button>
         <br>
         <a class="register-login" href="registro.html">No tengo cuenta</a>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+       <!-- <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script> -->
+       <!-- <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js'
+        // Add Firebase products that you want to use
+        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js'
+        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js'
+      </script> -->
+       <!-- Our script must be loaded after firebase references -->
+       <script src="script/login-register.js" type="module"></script>
 </body>
 </html>
