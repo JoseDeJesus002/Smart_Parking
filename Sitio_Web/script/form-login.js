@@ -30,6 +30,9 @@ singInForm.addEventListener("submit", async (e) => {
     if (error.code === "auth/invalid-email") {
       showMessages("Email invalido", "error");
     }
+    if (error.code === "auth/missing-password") {
+      showMessages("Ingresa tu contraseña", "error");
+    }
     console.log(error);
   }
 });

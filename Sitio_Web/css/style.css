@@ -271,4 +271,14 @@ p {
     border: none;
     cursor: pointer;
   }
+  .copyright
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 200px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
 }
