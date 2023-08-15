@@ -16,16 +16,19 @@ singInForm.addEventListener("submit", async (e) => {
   try {
     const credentials = await signInWithEmailAndPassword(auth, email, password);
 
-    showMessages("Inicio sesion correctamente...", "success");
+    showMessages("Inicio de sesion correcto...", "success");
     setTimeout(function () {
       window.location.href = "index.html";
     }, 2000);
   } catch (error) {
     if (error.code === "auth/user-not-found") {
-      alert("Usuario no registrado");
+      showMessages("Usuario no encontrado", "error");
     }
     if (error.code === "auth/wrong-password") {
-      alert("Contraseña incorrecta");
+      showMessages("Contraseña incorrecta", "error");
+    }
+    if (error.code === "auth/invalid-email") {
+      showMessages("Email invalido", "error");
     }
     console.log(error);
   }

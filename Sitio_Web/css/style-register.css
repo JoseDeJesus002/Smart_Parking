@@ -10,6 +10,19 @@
   background: #04b4cc99;
   opacity: 0.9;
 }
+#back{
+  color: #ffffff;
+  font-family: Inika;
+  font-size: 25px;
+  width: 133px;
+  height: 43px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 73px;
+  border: none;
+  background: #a79ad0cc;
+  opacity: 0.9;
+}
 .title-register{
   color: #ffffff;
   font-family: Inika;
