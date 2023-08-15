@@ -37,6 +37,31 @@ body {
   background-color: #d4d2e8;
 }
 
+.indicadores-1 {
+  margin-left: 5px;
+  margin-top: 0px;
+}
+.indicadores-2 {
+  margin-left: 680px;
+  margin-top: -478px;
+}
+.indicadores-3 {
+  margin-left: 920px;
+  margin-top: -472px;
+}
+.indicadores-4 {
+  margin-left: 1670px;
+  margin-top: -470px;
+}
+
+p {
+  padding-top: 20px;
+  margin-left: 80px;
+  margin-top: 10px;
+  font-size: 50px;
+  color: #030303;
+}
+
 #len-search {
   float: left;
   height: 30px;
@@ -145,7 +170,7 @@ body {
   }
 }
 /* Resolucion de LAPTOP*/
-@media screen and (max-height: 1024px) {
+@media screen and (max-height: 892px) {
   .topnav .search-container {
     float: none;
   }
@@ -200,24 +225,24 @@ body {
     border-radius: 50px;
     background-color: #d4d2e8;
   }
-  .indicadores-1{
+  .indicadores-1 {
     margin-left: 5px;
     margin-top: 0px;
   }
-  .indicadores-2{
+  .indicadores-2 {
     margin-left: 450px;
     margin-top: -478px;
   }
-  .indicadores-3{
+  .indicadores-3 {
     margin-left: 660px;
     margin-top: -472px;
   }
-  .indicadores-4{
+  .indicadores-4 {
     margin-left: 1120px;
     margin-top: -470px;
   }
 
-  p{
+  p {
     padding-top: 20px;
     margin-left: 80px;
     margin-top: 10px;

@@ -4,11 +4,19 @@
 .container {
   width: 589px;
   height: 492px;
-  margin-left: 350px;
-  margin-top: 50px;
+  margin-left: 650px;
+  margin-top: 200px;
   border-radius: 73px;
   background: #04b4cc99;
   opacity: 0.9;
+}
+.title-login{
+  color: #ffffff;
+  font-family: Inika;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: 195px;
+  font-size: 30px;
 }
 .label-login {
   color: #fffcfc;
@@ -22,7 +30,7 @@
 }
 .input-login {
   width: 340px;
-  height: 24px;
+  height: 34px;
   margin-left: 130px;
   margin-top: -10px;
   margin-bottom: 10px;
@@ -44,16 +52,16 @@
   border-radius: 73px;
   border: none;
 }
-.register-login{
-    width: 123px;
-    height: 43px;
-    font-family: Inika;
-    color: #fffcfc;
-    font-size: 25px;
-    line-height: normal;
-    margin-top: 30px;
-    margin-left: 205px;
-    border: none;
+.register-login {
+  width: 123px;
+  height: 43px;
+  font-family: Inika;
+  color: #fffcfc;
+  font-size: 25px;
+  line-height: normal;
+  margin-top: 30px;
+  margin-left: 205px;
+  border: none;
 }
 #image-resource {
   width: 250px;
@@ -63,14 +71,14 @@
 }
 
 /*Resolucion LAPTOP*/
-@media screen and (max-height: 1024px) {
-/* body {
+@media screen and (max-width: 792px) {
+  /* body {
   background-image: url("images/background-login.jpg");
 } */
-.container {
+  .container {
     width: 589px;
     height: 492px;
-    margin-left: 350px;
+    margin-left: 700px;
     margin-top: 50px;
     border-radius: 73px;
     background: #04b4cc99;
@@ -110,16 +118,16 @@
     border-radius: 73px;
     border: none;
   }
-  .register-login{
-      width: 123px;
-      height: 43px;
-      font-family: Inika;
-      color: #fffcfc;
-      font-size: 25px;
-      line-height: normal;
-      margin-top: 30px;
-      margin-left: 205px;
-      border: none;
+  .register-login {
+    width: 123px;
+    height: 43px;
+    font-family: Inika;
+    color: #fffcfc;
+    font-size: 25px;
+    line-height: normal;
+    margin-top: 30px;
+    margin-left: 205px;
+    border: none;
   }
   #image-resource {
     width: 250px;

@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style-login.css">
-    <title>Document</title>
-</head>
-<body background="images/background-login.jpg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style-login.css" />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/style-register.css" />
+    <!-- Funcion -->
+    <script src="script/form-login.js" type="module"></script>
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>Login</title>
+  </head>
+  <body background="images/background-login.jpg">
     <div class="container">
-        <img id="image-resource" src="images/resource-login.png" alt="">
+      <form id="login">
+        <img id="image-resource" src="images/resource-login.png" alt="" />
+        <h1 class="title-login">Inicio de Sesión</h1>
         <p class="label-login">Usuario</p>
-        <input class="input-login" id="email" type="text">
+        <input class="input-login" id="email-login" type="text" />
         <p class="label-login">Contraseña</p>
-        <input class="input-login" id="password" type="password">
-        <br>
-        <button class="join" onclick="login()">Ingresar</button>
-        <br>
+        <input class="input-login" id="password-login" type="password" />
+        <br />
+        <button type="submit" class="join">Ingresar</button>
+        <br />
         <a class="register-login" href="registro.html">No tengo cuenta</a>
+      </form>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-       https://firebase.google.com/docs/web/setup#available-libraries -->
-       <!-- <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js"></script> -->
-       <!-- <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js'
-        // Add Firebase products that you want to use
-        import { getAuth } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js'
-        import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js'
-      </script> -->
-       <!-- Our script must be loaded after firebase references -->
-       <script src="script/login-register.js" type="module"></script>
-</body>
+    <!-- Toastify libreria JS-->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
 </html>
