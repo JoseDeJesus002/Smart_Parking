@@ -71,19 +71,20 @@
 }
 
 /*Resolucion LAPTOP*/
-@media screen and (max-width: 792px) {
+@media screen and (max-height: 892px) 
+{ 
   /* body {
   background-image: url("images/background-login.jpg");
 } */
-  .container {
-    width: 589px;
-    height: 492px;
-    margin-left: 700px;
-    margin-top: 50px;
-    border-radius: 73px;
-    background: #04b4cc99;
-    opacity: 0.9;
-  }
+.container {
+  width: 589px;
+  height: 600px;
+  margin-left: 350px;
+  margin-top: 5px;
+  border-radius: 73px;
+  background: #04b4cc99;
+  opacity: 0.9;
+}
   .label-login {
     color: #fffcfc;
     font-family: Inika;
@@ -96,7 +97,7 @@
   }
   .input-login {
     width: 340px;
-    height: 24px;
+    height: 34px;
     margin-left: 130px;
     margin-top: -10px;
     margin-bottom: 10px;
