@@ -23,6 +23,7 @@
         border-width: 5px;
         border-style: solid;
         border-color: white;
+        
       }
     </style>
   </head>
@@ -55,9 +56,9 @@
     <div class="container">
     <div class="indicadores-1">
     <br><br><br><br>
-    <div class="indicador-led-off" id="indicador1"><p>1</p></div>
-    <div class="indicador-led-off" id="indicador2"><p>2</p></div>
-  <div class="indicador-led-off" id="indicador3"><p>3</p></div>
+    <div class="indicador-led-off" id="indicador1"><p>1 <img id="img-bussy" src="images/Car.png" alt="" hidden></p></div>
+    <div class="indicador-led-off" id="indicador2"><p>2 <img id="img-bussy-2" src="images/Car.png" alt="" hidden></p></div>
+  <div class="indicador-led-off" id="indicador3"><p>3 <img id="img-bussy-3" src="images/Car.png" alt="" hidden></p></div>
   <div class="indicador-led-off" id="indicador4"><p>4</p></div>
 </div>
 
@@ -118,7 +119,8 @@
         document
           .getElementById("indicador1")
           .classList.remove("indicador-led-off");
-        document.getElementById("indicador").classList.add("indicador-led-on");
+        document.getElementById("indicador1").classList.add("indicador-led-on");
+        document.getElementById('img-bussy').style.display="block";
       }
 
       function botonEncender2() {
@@ -126,12 +128,14 @@
           .getElementById("indicador2")
           .classList.remove("indicador-led-off");
         document.getElementById("indicador2").classList.add("indicador-led-on");
+        document.getElementById('img-bussy-2').style.display="block";
       }
       function botonApagar() {
         document
           .getElementById("indicador1")
           .classList.remove("indicador-led-on");
-        document.getElementById("indicador").classList.add("indicador-led-off");
+        document.getElementById("indicador1").classList.add("indicador-led-off");
+        document.getElementById('img-bussy').style.display="none";
       }
       function botonApagar2() {
         document
@@ -140,6 +144,7 @@
         document
           .getElementById("indicador2")
           .classList.add("indicador-led-off");
+          document.getElementById('img-bussy-2').style.display="none";
       }
     </script>
     <script src="script/nav_bar.js"></script>

@@ -1,0 +1,7 @@
+You have installed python for this solution
+first only one time
+pip install esptool
+erase 1
+python -m esptool --chip esp32 --port COM5 o COM6/PORT --baud 115200 --after hard_reset erase_flash
+erase 2
+python -m esptool --port COM5 o COM6 write_flash_status --non-volatile 0
