@@ -10,13 +10,18 @@
 //Se definen las variables
 #define Led 2
 #define Leds 32
+#define Ledss 26
+
 Ultrasonic ultrasonic(13, 12);
 Ultrasonic ultrasonic2(33, 25);
+Ultrasonic ultrasonic3(18, 5);
 
 int distance;
 int distance2;
+int distance3;
 int indicador;
 int indicador2;
+int indicador3;
 
 //Se colocan las credenciales de la red para realizar la conexion a la red 
 const char* ssid     = "Totalplay-BCAA";
@@ -117,30 +122,42 @@ void enviarDatos()
 {
   distance = ultrasonic.read(CM); //Lee los datos que envia el sensor ultrasonico
   distance2 = ultrasonic2.read(CM);
+  distance3 = ultrasonic3.read(CM);
 
   //valida que se este enviando un valor numerico
-   if (isnan(distance || distance2)){
+   if (isnan(distance || distance2 || distance3)){
      Serial.println(F("Fallo al detectar!")); 
      return;
    }
-   
+   //Distancia 1 
    // actualiza el valor del LED para encenderlo
-   if(distance >= 20)
+   if(distance >= 10)
    {
-    indicador = 1; //variable indica un valor booleano
+    indicador = 0; //variable indica un valor booleano
     digitalWrite(Led,indicador);//indica que encienda el LED
    }else if(distance <= 20){ //caso contrario menor a la distancia indicada
-    indicador = 0; //varibale indica un valor booleano
+    indicador = 1; //varibale indica un valor booleano
     digitalWrite(Led,indicador);//indica que apague el LED
    }
-   if(distance2 >=20)
+   //Distancia 2
+   if(distance2 >=10)
    {
-    indicador2 = 1;
+    indicador2 = 0;
     digitalWrite(Leds,indicador2);//indica que encienda el LED
    }else if ( distance2 <=20)
    {
-    indicador2 = 0;
+    indicador2 = 1;
     digitalWrite(Leds,indicador2);
+   }
+   //Distancia 3 
+    if(distance3 >=10)
+   {
+    indicador3 = 0;
+    digitalWrite(Ledss,indicador3);//indica que encienda el LED
+   }else if ( distance3 <=20)
+   {
+    indicador3 = 1;
+    digitalWrite(Ledss,indicador3);
    }
 
    //Envia los datos en formato JSON para ser interpretados por JS
@@ -148,10 +165,14 @@ void enviarDatos()
          JSON_Data += distance;
          JSON_Data +=",\"distancia2\":";
          JSON_Data += distance2;
+         JSON_Data +=",\"distancia3\":";
+         JSON_Data += distance3;
          JSON_Data += ",\"indicador\":";
          JSON_Data += indicador;
          JSON_Data += ",\"indicador2\":";
          JSON_Data += indicador2;
+         JSON_Data += ",\"indicador3\":";
+         JSON_Data += indicador3;
          JSON_Data += "}";
          
   // imprime los datos en el monitor serial

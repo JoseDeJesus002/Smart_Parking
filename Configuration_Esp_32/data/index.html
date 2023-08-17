@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script src="script/main.js" type="module"></script>
+    <title>Led</title>
+    <style>
+      .indicador-led-on {
+        background-color: rgb(255, 0, 0);
+        width: 200px;
+        height: 100px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: white;
+      }
+      .indicador-led-off {
+        background-color: rgb(41, 238, 51);
+        width: 200px;
+        height: 100px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: white;
+      }
+      /* NAV bar */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #476887;
+}
+
+.topnav {
+  overflow: visible;
+  margin-top: 20px;
+}
+
+.topnav .search-container {
+  z-index: -1;
+  float: right;
+  margin-top: 10px;
+  margin-right: 800px;
+  border-radius: 40px;
+  height: 50px;
+  width: 360px;
+  background-color: #d4d2e8;
+}
+
+.topnav input[type="text"] {
+  height: 40px;
+  width: 300px;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 17px;
+  border: none;
+  border-color: #d4d2e8;
+  border-radius: 50px;
+  background-color: #d4d2e8;
+}
+
+.indicadores-1 {
+  margin-left: 5px;
+  margin-top: 0px;
+}
+.indicadores-2 {
+  margin-left: 680px;
+  margin-top: -478px;
+}
+.indicadores-3 {
+  margin-left: 920px;
+  margin-top: -472px;
+}
+.indicadores-4 {
+  margin-left: 1670px;
+  margin-top: -470px;
+}
+
+p {
+  padding-top: 20px;
+  margin-left: 80px;
+  margin-top: 10px;
+  font-size: 50px;
+  color: #030303;
+}
+
+#len-search {
+  float: left;
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+#title
+{
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 8px 8px 8px 22px;
+  text-decoration: none;
+  font-size: 35px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
+  color: #161515;
+  transition: 0.3s;
+  background-color: #fff;
+}
+/* Menu slider */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  margin-left: -10px;
+  left: 60;
+  background-color: #000000;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.menu_func {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 35px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #000000;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #5c5657;
+}
+
+.sidenav .closebtn {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.copyright
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 500px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+/* Menu slider */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 414px) {
+  .sidenav {
+    padding-top: 50px;
+    margin-left: 10px;
+    left: -10px;
+  }
+}
+
+/* NAV bar */
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a,
+  .topnav input[type="text"],
+  .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type="text"] {
+    border: 1px solid #ccc;
+  }
+}
+/* Resolucion de LAPTOP*/
+@media screen and (max-height: 892px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a,
+  .topnav input[type="text"],
+  .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type="text"] {
+    border: 1px solid #ccc;
+  }
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #476887;
+  }
+
+  .topnav {
+    overflow: visible;
+    margin-top: 20px;
+  }
+
+  .topnav .search-container {
+    z-index: -1;
+    float: right;
+    margin-top: 5px;
+    margin-right: 500px;
+    border-radius: 40px;
+    height: 50px;
+    width: 360px;
+    background-color: #d4d2e8;
+  }
+
+  .topnav input[type="text"] {
+    height: 40px;
+    width: 300px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-left: 50px;
+    font-size: 17px;
+    border: none;
+    border-color: #d4d2e8;
+    border-radius: 50px;
+    background-color: #d4d2e8;
+  }
+  .indicadores-1 {
+    margin-left: 5px;
+    margin-top: 0px;
+  }
+  .indicadores-2 {
+    margin-left: 450px;
+    margin-top: -478px;
+  }
+  .indicadores-3 {
+    margin-left: 660px;
+    margin-top: -472px;
+  }
+  .indicadores-4 {
+    margin-left: 1120px;
+    margin-top: -470px;
+  }
+
+  p{
+    padding-top: 20px;
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 50px;
+    color: #030303;
+  }
+  #img-bussy{
+  margin-left: -120px;
+  margin-top: -165px;
+  width: 250px;
+  height: 250px;
+ }
+  #img-bussy-2{
+  margin-left: -120px;
+  margin-top: -165px;
+  width: 250px;
+  height: 250px;
+ }
+  #img-bussy-3{
+  margin-left: -120px;
+  margin-top: -165px;
+  width: 250px;
+  height: 250px;
+ }
+  #len-search {
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-top: -50px;
+    margin-right: 10px;
+    margin-left: 0px;
+    border: none;
+    cursor: pointer;
+  }
+  .copyright
+{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-top: 200px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search.." name="search">
+          <a href=""><img src="https://cdn-icons-png.flaticon.com/512/3208/3208842.png" id="len-search"></a>
+        </form>
+      </div>
+    </div>
+    <!-- Sidebar -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a>
+      <h2 id="title">Smart Parking</h2>
+      <a href="#">Inicio</a>
+      <a class="logged-out" href="#">Iniciar Sesion</a>
+      <a class="logged-out" href="#">Registrate</a>
+      <a class="logged-in" href="#" id="logout">Cerrar sesion</a>
+      <a class="copyright">
+        © Smart Parking 2023
+      </a>
+    </div>
+
+    <div id="main">
+      <span style="cursor: pointer" class="menu_func" onclick="openNav()"
+        >&#9776;</span>
+    <div class="container">
+    <div class="indicadores-1">
+    <br><br><br><br>
+    <div class="indicador-led-off" id="indicador1"><p>1 <img style="margin-left: -120px; margin-top: -165px; width: 250px; height: 250px;" id="img-bussy" src="https://cdn.icon-icons.com/icons2/1746/PNG/512/4047289-auto-car-combi-commercial-compact-computer_113535.png" alt="" hidden></p></div>
+    <div class="indicador-led-off" id="indicador2"><p>2 <img style="margin-left: -120px; margin-top: -165px; width: 250px; height: 250px;" id="img-bussy-2" src="https://cdn.icon-icons.com/icons2/1746/PNG/512/4047289-auto-car-combi-commercial-compact-computer_113535.png" alt="" hidden></p></div>
+  <div class="indicador-led-off" id="indicador3"><p>3 <img style="margin-left: -120px; margin-top: -165px; width: 250px; height: 250px;" id="img-bussy-3" src="https://cdn.icon-icons.com/icons2/1746/PNG/512/4047289-auto-car-combi-commercial-compact-computer_113535.png" alt="" hidden></p></div>
+  <div class="indicador-led-off" id="indicador4"><p>4</p></div>
+</div>
+
+<div class="indicadores-2">
+  <br><br><br><br>
+  <div class="indicador-led-off" id="indicador5"><p>5</p></div>
+  <div class="indicador-led-off" id="indicador6"><p>6</p></div>
+<div class="indicador-led-off" id="indicador7"><p>7</p></div>
+<div class="indicador-led-off" id="indicador8"><p>8</p></div>
+</div>
+
+<div class="indicadores-3"> 
+  <br><br><br><br>
+  <div class="indicador-led-off" id="indicador9"><p>9</p></div>
+  <div class="indicador-led-off" id="indicador10"><p>10</p></div>
+<div class="indicador-led-off" id="indicador11"><p>11</p></div>
+<div class="indicador-led-off" id="indicador12"><p>12</p></div>
+</div>
+
+<div class="indicadores-4">
+  <br><br><br><br>
+  <div class="indicador-led-off" id="indicador13"><p>14</p></div>
+  <div class="indicador-led-off" id="indicador14"><p>15</p></div>
+<div class="indicador-led-off" id="indicador15"><p>16</p></div>
+<div class="indicador-led-off" id="indicador16"><p>17</p></div>
+</div>
+  </div>
+
+    <script>
+      //conexion con el servidor websockets
+      var connection = new WebSocket("ws://" + location.hostname + ":81/");
+      //variables para el registro de los datos
+      var estado_boton = 0;
+      var estado_boton2 = 0;
+      var estado_boton3 = 0;
+
+      connection.onmessage = function (event) {
+        //extraccion de datos desde arduino
+        var datos_sensores = event.data;
+        var data = JSON.parse(datos_sensores);
+        //variables de extraccion de datos
+        estado_boton = data.indicador;
+        estado_boton2 = data.indicador2;
+        estado_boton3 = data.indicador3;
+        //actualizacion de indicador
+        if (estado_boton == 1) {
+          botonEncender();
+        } else if (estado_boton == 0) {
+          botonApagar();
+        }
+        //Lugar 2
+        if (estado_boton2 == 1) {
+          botonEncender2();
+        } else if (estado_boton2 == 0) {
+          botonApagar2();
+        }
+        //Lugar 3
+        if (estado_boton3 == 1) {
+          botonEncender3();
+        } else if (estado_boton3 == 0) {
+          botonApagar3();
+        }
+      };
+
+      function botonEncender() {
+        document
+          .getElementById("indicador1")
+          .classList.remove("indicador-led-off");
+        document.getElementById("indicador1").classList.add("indicador-led-on");
+        document.getElementById('img-bussy').style.display="block";
+      }
+
+      function botonEncender2() {
+        document
+          .getElementById("indicador2")
+          .classList.remove("indicador-led-off");
+        document.getElementById("indicador2").classList.add("indicador-led-on");
+        document.getElementById('img-bussy-2').style.display="block";
+      }
+      function botonApagar() {
+        document
+          .getElementById("indicador1")
+          .classList.remove("indicador-led-on");
+        document.getElementById("indicador1").classList.add("indicador-led-off");
+        document.getElementById('img-bussy').style.display="none";
+      }
+      function botonApagar2() {
+        document
+          .getElementById("indicador2")
+          .classList.remove("indicador-led-on");
+        document
+          .getElementById("indicador2")
+          .classList.add("indicador-led-off");
+          document.getElementById('img-bussy-2').style.display="none";
+      }
+
+      function botonEncender3() {
+        document
+          .getElementById("indicador3")
+          .classList.remove("indicador-led-off");
+        document.getElementById("indicador3").classList.add("indicador-led-on");
+        document.getElementById('img-bussy-3').style.display="block";
+      }
+
+      function botonApagar3() {
+        document
+          .getElementById("indicador3")
+          .classList.remove("indicador-led-on");
+        document.getElementById("indicador3").classList.add("indicador-led-off");
+        document.getElementById('img-bussy-3').style.display="none";
+      }
+
+    </script>
+    <script>
+      function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "0px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+    </script>
+  </body>
+</html>
